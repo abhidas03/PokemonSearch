@@ -1,3 +1,8 @@
+//PokeAPI Website: https://pokeapi.co/
+//PokeAPI Docs: https://pokeapi.co/docs/v2
+//Note bugs: 
+//Giratina is stored as "giratina-altered" and does not work 
+//Pokemon after Gen-5 do not work
 async function getPokemonInfo() {
     try {
         let response = await fetch(`${link}${pokemon}`)
@@ -5,35 +10,43 @@ async function getPokemonInfo() {
         console.log(data);
         let imgUrl = (data.sprites.versions["generation-v"]["black-white"].animated.front_default)
         sprite.setAttribute("src", imgUrl);
+        errorText.innerText = "";
         return data;
     } catch(e) {
         console.log(e.message);
+        errorText.innerText = "Please enter a valid Pokemon. Please. For Abhi.";
     }
+}
+
+function clearSearch() {
+    searchInput.value = "";
 }
 
 const sprite = document.getElementById("pic");
 const searchInput = document.getElementById("search");
 const submitButton = document.getElementById("submit");
-let pokemon = "milotic";
+const clearButton = document.getElementById("clear");
+const errorText = document.getElementById("error");
+let pokemon = "lapras";
 const link = "https://pokeapi.co/api/v2/pokemon/";
 
-//if submit button pressed: 
+//When submit button pressed, reads the value in 
+//search button and assigns it to pokemon variable,
+//then calls PokeAPI 
 submitButton.addEventListener("click", () => {
-        searchInput.addEventListener("input", (poke) => {
-            let value = poke.target.value
-            if (value && value.trim().length > 0){
-                 value = value.trim().toLowerCase()
-                 pokemon = value;
-                 getPokemonInfo();
-            }
-    });
- 
+    try {
+        let value = searchInput.value
+        if (value && value.trim().length > 0){
+                pokemon = value.trim().toLowerCase()
+                getPokemonInfo();
+        }
+    } catch(e) {
         console.log(e);
-    
+    }
 });
 
-    //add error
-
-// });
+clearButton.addEventListener("click", () => {
+    clearSearch();
+})
 
 getPokemonInfo();
