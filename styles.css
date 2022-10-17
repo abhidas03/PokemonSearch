@@ -1,22 +1,20 @@
-/* to-do: change background image */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: 
-    linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(315deg, black 25%, transparent 25%),
-    linear-gradient(45deg, black 25%, transparent 25%);	
-    background-size: 2em 2em;
-    background-color: #232323;
     display: flex;
     flex-flow: column wrap;
+    margin: 20px;
   }
-
 
 img {
     width: 150px;
     height: auto;
-    margin: 20px 20px;
+    margin: 20px 30px;
+    
+}
+
+.bg {
+    background-image: url("img/pokedex.jpeg");
+    background-size: cover;
 }
 
 .error-message {
