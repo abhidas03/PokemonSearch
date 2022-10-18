@@ -30,7 +30,14 @@ const errorText = document.getElementById("error");
 let pokemon = "lapras";
 const link = "https://pokeapi.co/api/v2/pokemon/";
 
-//When submit button pressed, reads the value in 
+//Triggers submit button when "Enter" key pressed
+searchInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        submitButton.click();
+    }
+});
+//When submit button triggered, reads the value in 
 //search button and assigns it to pokemon variable,
 //then calls PokeAPI 
 submitButton.addEventListener("click", () => {
@@ -47,6 +54,6 @@ submitButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
     clearSearch();
-})
+});
 
 getPokemonInfo();
