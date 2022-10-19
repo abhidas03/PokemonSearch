@@ -1,8 +1,7 @@
 //PokeAPI Website: https://pokeapi.co/
 //PokeAPI Docs: https://pokeapi.co/docs/v2
 //Note bugs: 
-//Giratina is stored as "giratina-altered" and does not work 
-//Pokemon after Gen-5 do not work
+//Giratina is stored as "giratina-altered" and does not work
 async function getPokemonInfo() {
     try {
         let response = await fetch(`${link}${pokemon}`)
@@ -14,7 +13,7 @@ async function getPokemonInfo() {
         return data;
     } catch(e) {
         console.log(e.message);
-        errorText.innerText = "Please enter a valid Pokemon. Please. For Abhi.";
+        errorText.innerText = "Please enter a valid Pokemon.";
     }
 }
 
