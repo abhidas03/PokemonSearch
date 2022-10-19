@@ -8,7 +8,7 @@ async function getPokemonInfo() {
         let response = await fetch(`${link}${pokemon}`)
         let data = await response.json();
         console.log(data);
-        let imgUrl = (data.sprites.versions["generation-v"]["black-white"].animated.front_default)
+        let imgUrl = (data.sprites.front_default);
         sprite.setAttribute("src", imgUrl);
         errorText.innerText = "";
         return data;

@@ -11,10 +11,8 @@ body {
   }
 
 img {
-    width: 150px;
-    height: auto;
-    margin: 20px 30px;
-    
+    transform: scale(3.0, 3.0);
+    margin: 90px 80px;
 }
 
 .bg {
