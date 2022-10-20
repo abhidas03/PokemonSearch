@@ -9,6 +9,7 @@ async function getPokemonInfo() {
         console.log(data);
         let imgUrl = (data.sprites.front_default);
         sprite.setAttribute("src", imgUrl);
+        pokemonLabel.innerHTML = `${pokemon}`.toUpperCase();
         errorText.innerText = "";
         return data;
     } catch(e) {
@@ -26,7 +27,8 @@ const searchInput = document.getElementById("search");
 const submitButton = document.getElementById("submit");
 const clearButton = document.getElementById("clear");
 const errorText = document.getElementById("error");
-let pokemon = "lapras";
+const pokemonLabel = document.getElementById("pokemon-name");
+let pokemon = "pikachu";
 const link = "https://pokeapi.co/api/v2/pokemon/";
 
 //Triggers submit button when "Enter" key pressed
