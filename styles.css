@@ -1,14 +1,32 @@
-/* TODO: Make text be centered under circle  */
+/* TODO: Make text be centered under circle  
+   Make submit button a search icon, remove clear
+*/
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     flex-flow: column wrap;
+    box-sizing: border-box;
   }
 
 .form-container {
     z-index: 999;
     margin: 20px;
 }
+
+input {
+    width: 12%;
+    padding: 8px;
+    border: 2px solid rgb(73, 73, 95);
+    border-radius: 4px;
+}
+
+.submit-results, .clear-results {
+    padding: 8px;
+    border: 2px solid rgb(73, 73, 95);
+    border-radius: 4px;
+}
+
+
 #pic { 
     transform: scale(1.75, 1.75);
     margin-left: 80px;
@@ -23,6 +41,7 @@ body {
     position: absolute;
     border-radius: 50%;
 }
+
 
 #pokemon-name {
     margin-top: 15px;
